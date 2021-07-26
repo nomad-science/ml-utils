@@ -14,3 +14,13 @@ def get_data_from_dir(directory, fileName):
 def get_data(file_name):
     filePath = os.path.join(datasetsDirectory, file_name)
     return pd.read_csv(filePath)
+
+def convert_column_names(input_list):
+    output_names = []
+
+    for name in input_list:
+        name = name.lower().replace(" ", "_")
+        output_names.append(name)
+
+    return output_names
+
